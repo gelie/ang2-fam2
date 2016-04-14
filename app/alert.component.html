@@ -1,10 +1,16 @@
-<div class="col-sm-4">
-<alert *ngFor="#alert of alerts;#i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
-  {{ alert?.msg }}
-</alert>
+<div class="col-sm-6">
+    <alert *ngFor="#alert of alerts;#i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+        {{ alert?.msg }}
+    </alert>
 
-<alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+    <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
 
-<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>
-<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    <!--<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>-->
+    <span class='btn btn-primary'>
+        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true" (click)="addPartner()"></span>
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" (click)="addParent()"></span>
+        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" (click)="addSibling()"></span>
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" (click)="addChild()"></span>
+    </span>
+
 </div>

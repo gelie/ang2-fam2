@@ -24,7 +24,19 @@ export class AlertDemo {
     this.alerts.splice(i, 1);
   }
 
-  public addAlert():void {
-    this.alerts.push({msg: 'Another alert!', type: 'warning', closable: true});
+  public addParent():void {
+    this.alerts.push({msg: 'Another parent!', type: 'warning', closable: true});
+  }
+  
+  public addChild():void {
+    this.alerts.push({msg: 'Another child!', type: 'warning', closable: true});
+  }
+  
+  public addSibling():void {
+    this.alerts.push({msg: 'Another sibling!', type: 'warning', closable: true});
+  }
+  
+  public addPartner():void {
+    this.alerts.push({msg: 'Another partner!', type: 'warning', closable: true});
   }
 }
