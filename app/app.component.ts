@@ -1,7 +1,13 @@
 import {Component} from 'angular2/core';
+import {PersonComponent} from './person.component';
+import {AlertDemo} from './alert.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    template: `
+      <person></person>
+      <alert-demo></alert-demo>
+    `,
+    directives: [PersonComponent, AlertDemo]
 })
 export class AppComponent { }
