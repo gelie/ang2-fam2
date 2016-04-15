@@ -1,16 +1,30 @@
-<div class="col-sm-6">
-    <alert *ngFor="#alert of alerts;#i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
-        {{ alert?.msg }}
-    </alert>
+<div class="tree">
+  <ul>
+    <li>
+      <span>
+        <a href="#">
+          <span class="glyphicon glyphicon-arrow-left" aria-hidden="true" (click)="addPartner()"></span>
+          <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" (click)="addParent()"></span>
+          Gavin
+          <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" (click)="addSibling()"></span>
+          <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" (click)="addChild()"></span>
+        </a>
+      </span>
+    </li>
+  </ul>
 
-    <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+  <!--<alert *ngFor="#alert of alerts;#i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+    {{ alert?.msg }}
+  </alert>
 
-    <!--<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>-->
-    <span class='btn btn-primary'>
-        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true" (click)="addPartner()"></span>
-        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" (click)="addParent()"></span>
-        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" (click)="addSibling()"></span>
-        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" (click)="addChild()"></span>
-    </span>
+  <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>-->
+
+  <!--<button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>-->
+  <!--<button class='btn btn-primary'>
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true" (click)="addPartner()"></span>
+    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true" (click)="addParent()"></span>
+    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true" (click)="addSibling()"></span>
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true" (click)="addChild()"></span>
+  </button>-->
 
 </div>
