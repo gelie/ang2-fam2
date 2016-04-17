@@ -1,23 +1,22 @@
 import {Component, OnInit} from 'angular2/core';
+import {CORE_DIRECTIVES} from 'angular2/common';
 import {PersonService} from './person.service';
 import {Configuration} from './configuration'
-import {CORE_DIRECTIVES} from 'angular2/common';
 import {Person} from './person.interface';
 
 @Component({
-    selector: 'person',
-    templateUrl: 'app/person.component.html',
+    selector: 'person-detail',
+    templateUrl: 'app/person-detail.component.html',
     directives: [CORE_DIRECTIVES],
     providers: [PersonService, Configuration]
 })
 
-export class PersonComponent implements OnInit {
-    public person: Person;
-    // public name = JSON.stringify(this.person.name);
-    // public count: number;
-    public errorMessage: string;
+export class PersonDetailComponent implements OnInit {
 
     constructor(private _http: PersonService) { }
+
+    selectedPerson: string;
+    errorMessage: string;
 
     ngOnInit() {
         this.getOnePerson();
@@ -26,7 +25,7 @@ export class PersonComponent implements OnInit {
     private getOnePerson() {
         this._http.getOnePerson()
             .subscribe(
-            data => (this.person = data),
+            data => (this.selectedPerson = data.name),
             error => this.errorMessage = <any>error,
             () => console.log("Finished retrieving one person.")
             );
