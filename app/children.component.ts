@@ -5,29 +5,30 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 import {Person} from './person.interface';
 
 @Component({
-  selector: 'children',
-  templateUrl: 'app/children.component.html',
-  // inputs: ['url'],
-  directives: [CORE_DIRECTIVES]
+    selector: 'children',
+    templateUrl: 'app/children.component.html',
+    directives: [CORE_DIRECTIVES]
 })
 
 export class ChildrenComponent implements OnInit {
-  public children: Person[];
-  public errorMessage: string;
-  @Input() myurl: string;
+    public children: Person[];
+    public errorMessage: String;
+    @Input() url: string;
 
-  constructor(private _http: PersonService) { }
-  
-  ngOnInit() {
-        this.getChildren(this.myurl);
+    constructor(private _http: PersonService) { }
+
+    ngOnInit() {
+        // console.log('myurl = ' + this.url);
+        this.getChildren(this.url);
+        // this.getChildren("https://localhost:5000/family/api/v3.0/persons/1/children");
     };
 
-  private getChildren(url) {
+    private getChildren(url) {
         this._http.getChildren(url)
             .subscribe(
             data => this.children = data,
             error => this.errorMessage = <any>error,
             () => console.log("Finished retrieving children.")
             );
-    }
+    };
 }
