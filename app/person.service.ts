@@ -17,17 +17,30 @@ export class PersonService {
         this.headers.append('Accept', 'application/json');
     }
     
-    public getAllPeople() {
-        return this._http.get(this.actionUrl, this.headers)
+    public getRoot() {
+      return this._http.get(this.actionUrl + '/tree', this.headers)
+      .map(res => res.json())
+      .catch(error => this.handleError(error));
+    }
+    
+    public getChildren(url) {
+        return this._http.get(url, this.headers)
         .map(res => res.json())
         .catch(error => this.handleError(error));
     }
     
-    public getOnePerson() {
-        return this._http.get(this.actionUrl+'/2', this.headers)
+    public getAllPeople() {
+        return this._http.get(this.actionUrl + '/persons', this.headers)
         .map(res => res.json())
         .catch(error => this.handleError(error));
     }
+    
+    // public getOnePerson() {
+    //     return this._http.get(this.actionUrl+'/persons/2', this.headers)
+    //     .map(res => res.json())
+    //     .catch(error => this.handleError(error));
+    // }
+    
     private handleError (error: Response) {
     // in a real world app, we may send the error to some remote logging infrastructure
     // instead of just logging it to the console

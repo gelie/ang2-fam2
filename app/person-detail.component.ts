@@ -19,15 +19,15 @@ export class PersonDetailComponent implements OnInit {
     errorMessage: string;
 
     ngOnInit() {
-        this.getOnePerson();
+        // this.getOnePerson();
     }
 
-    private getOnePerson() {
-        this._http.getOnePerson()
-            .subscribe(
-            data => (this.selectedPerson = data.name),
-            error => this.errorMessage = <any>error,
-            () => console.log("Finished retrieving one person.")
-            );
-    }
+    // private getOnePerson() {
+    //     this._http.getOnePerson()
+    //         .subscribe(
+    //         data => (this.selectedPerson = data.name),
+    //         error => this.errorMessage = <any>error,
+    //         () => console.log("Finished retrieving one person.")
+    //         );
+    // }
 }

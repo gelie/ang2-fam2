@@ -20,15 +20,15 @@ export class PersonComponent implements OnInit {
     constructor(private _http: PersonService) { }
 
     ngOnInit() {
-        this.getOnePerson();
+        // this.getOnePerson();
     }
 
-    private getOnePerson() {
-        this._http.getOnePerson()
-            .subscribe(
-            data => (this.person = data),
-            error => this.errorMessage = <any>error,
-            () => console.log("Finished retrieving one person.")
-            );
-    }
+    // private getOnePerson() {
+    //     this._http.getOnePerson()
+    //         .subscribe(
+    //         data => (this.person = data),
+    //         error => this.errorMessage = <any>error,
+    //         () => console.log("Finished retrieving one person.")
+    //         );
+    // }
 }

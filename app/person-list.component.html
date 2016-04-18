@@ -1,8 +1,13 @@
 <div class="tree">
-    <ul>
-        <li *ngFor='#person of persons'>
-            <a href="#">{{person.name}}</a>
+  <ul>
+    <li>
+      <a href="#">{{root}}</a>
+      <children [myurl]="rootChildrenUrl"></children>
+      <!--<ul>
+        <li *ngFor="#child of children">
+          <a href="#">{{child.firstname}}</a>
         </li>
-        <person-detail></person-detail>
-    </ul>
+      </ul>-->
+    </li>
+  </ul>
 </div>
