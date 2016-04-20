@@ -5,8 +5,8 @@ export class TreeNodeService {
   constructor(private _store: Store) {
   }
   loadTreeNodes(root) {
-    if (root.url) {
-      this._store.dispatchAction({ key: root.key, url: root.url, name: 'LOAD_NODES' });
+    if (root.uri) {
+      this._store.dispatchAction({ url: root.uri, name: 'LOAD_NODES' });
     }
   }
 }

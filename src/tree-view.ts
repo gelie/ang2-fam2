@@ -6,7 +6,8 @@ import {Store} from './redux/store';
 @Component({
   selector: 'tree-view',
   templateUrl: '/src/templates/tree-view.html',
-  directives: [TreeView]
+  directives: [TreeView],
+  providers: [Store, TreeNodeService]
 })
 
 export class TreeView {
@@ -17,7 +18,7 @@ export class TreeView {
   constructor(private _store:Store, private _treeNodeService:TreeNodeService){
   }
   ngOnInit(){
-    this.subscription = this._store.getTreeNodes(this.root.key).subscribe(res => {
+    this.subscription = this._store.getTreeNodes(this.root.name).subscribe(res => {
       this.items = res;
     });
     this._treeNodeService.loadTreeNodes(this.root);
