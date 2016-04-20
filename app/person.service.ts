@@ -18,7 +18,8 @@ export class PersonService {
     }
     
     public getRoot() {
-      return this._http.get(this.actionUrl + '/tree', this.headers)
+      let url = this.actionUrl + "/tree";
+      return this._http.get(url, this.headers)
       .map(res => res.json())
       .catch(error => this.handleError(error));
     }
