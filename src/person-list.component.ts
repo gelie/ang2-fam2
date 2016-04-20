@@ -7,7 +7,7 @@ import {ChildrenComponent} from './children.component';
 
 @Component({
     selector: 'person-list',
-    templateUrl: 'app/person-list.component.html',
+    templateUrl: 'src/templates/person-list.component.html',
     directives: [CORE_DIRECTIVES, ChildrenComponent],
     providers: [PersonService, Configuration]
 })

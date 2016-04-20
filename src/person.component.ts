@@ -6,7 +6,7 @@ import {Person} from './person.interface';
 
 @Component({
     selector: 'person',
-    templateUrl: 'app/person.component.html',
+    templateUrl: 'src/templates/person.component.html',
     directives: [CORE_DIRECTIVES],
     providers: [PersonService, Configuration]
 })

@@ -4,7 +4,7 @@ import {Alert} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'alert-demo',
-  templateUrl: 'app/alert.component.html',
+  templateUrl: 'src/templates/alert.component.html',
   directives: [Alert, CORE_DIRECTIVES]
 })
 export class AlertDemo {
